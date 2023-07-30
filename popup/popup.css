@@ -1,0 +1,155 @@
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 400px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #222;
+    color: #fff;
+}
+
+.form-control {
+    background-color: #545454;
+    color: #fff;
+    border: 0;
+}
+
+.form-control:focus {
+    color: #fff;
+    background-color: #545454;
+    outline: none;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.btn-primary:active{
+    opacity: 0.5;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+select.form-control option {
+    zoom: 1.5
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: auto
+}
+
+.d-flex{
+    display: flex;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.box-token{
+    display: flex;
+    border-radius: 4px;
+    border: none;
+    overflow: hidden;
+}
+
+input:focus{
+    outline: 1px solid #886af7;
+}
+
+.empty-row{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.progress-bar-striped {
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+}
+
+.progress-bar-animated {
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+    from { background-position: 1rem 0; }
+    to { background-position: 0 0; }
+}
+
+.word-break{
+    word-break: break-all;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    min-height: 36px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(191,193,203,.5);
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.badge.onleft {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.navbar-brand{
+    flex: 1 1 auto;
+}
+
+.btn-navItem{
+    width: 40px;
+    height: 40px;
+    background-color: #efefef;
+    background-size: 80% 80%;
+    background-position: center;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.btn-open-options-page{
+    background-image: url(../assets/options.svg);
+}
+
+.btn-open-options-page:hover{
+    -webkit-animation: ani-rotate 1s linear infinite;
+    animation: ani-rotate 1s linear infinite;
+}
+
+.btn-navItem:hover{
+    background-color: #f4f1ff;
+}
+
+@keyframes ani-rotate {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+.form-check{
+    padding-left: 1.25rem;
+}

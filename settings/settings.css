@@ -1,0 +1,27 @@
+body {
+    background-color: #222;
+    color: #eee;
+    overflow: hidden;
+}
+
+.special-text {
+    color: red;
+}
+
+.form-control {
+    background-color: #545454;
+    color: #fff;
+    border-width: 4px;
+}
+
+.form-control:focus {
+    color: #fff;
+    background-color: #545454;
+    border-color: #886af7;
+    border-width: 4px;
+    outline: none;
+}
+
+#btnSave:hover {
+    cursor: pointer;
+}

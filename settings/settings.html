@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="../assets/custom-bootstrap-magic.css" />
+    <link rel="stylesheet" href="settings.css" />
+    <title>APITable Url to Image Converter：Settings</title>
+</head>
+<body>
+
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col p-3">
+                <div class="alert alert-success" role="alert" id="statusMsg" style="display: none;"></div>
+                <form class="m-2">
+                    <div class="form-group">
+                        <label for="inputUrlField"> API Token </label>
+                        <input class="form-control" id="inputTokenField" type="password"/>
+                        <small id="tokenHelp" class="form-text text-muted">Tips: You can find it in "My Settings > Developer"</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputUrlField"> API Host </label>
+                        <input class="form-control" id="inputHostField" />
+                        <small id="hostHelp" class="form-text text-muted">Tips: The APITable api host </small>
+                    </div>
+                  
+                    <div class="form-group text-right pt-2 mb-0">
+                        <button type="button" class="btn btn-primary btn-sm" id="btnSave">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html>
