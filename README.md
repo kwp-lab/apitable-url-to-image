@@ -16,9 +16,9 @@
 
 This is a browser extension that extracts images from URLs and uploads them to APITable.
 
-✨ You can extract images from URL addresses and save them to the "Attachment" field.
-✨ Supports processing multiple URLs separated by commas (in a single cell), enabling multiple attachments to be saved in the same cell.
-✨ Beginner-friendly, developed using basic HTML, JavaScript, and CSS, without requiring knowledge of frameworks like React or Vue.
+- ✨ You can extract images from URL addresses and save them to the "Attachment" field.
+- ✨ Supports processing multiple URLs separated by commas (in a single cell), enabling multiple attachments to be saved in the same cell.
+- ✨ Beginner-friendly, developed using basic HTML, JavaScript, and CSS, without requiring knowledge of frameworks like React or Vue.
 
 ## Preview
 
