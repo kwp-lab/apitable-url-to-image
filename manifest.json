@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "APITable Url to Image Converter",
     "description": "An extension designed to extract images from URLs and upload them to APITable.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "icons": {
         "16": "logo/logo-16.png",
         "48": "logo/logo-48.png",
