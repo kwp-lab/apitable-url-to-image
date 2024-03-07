@@ -21,6 +21,7 @@
         "storage"
     ],
     "host_permissions": [
+        "https://aitable.ai/*",
         "https://apitable.com/*",
         "https://vika.cn/*"
     ],

@@ -16,7 +16,7 @@ importScripts("imageUploader.js");
 // The path should be relative to the file `manifest.json`.
 
 // Where we will expose all the data we retrieve from storage.sync.
-const storageCache = { apiToken: "", apiHost: "https://apitable.com" };
+const storageCache = { apiToken: "", apiHost: "https://aitable.ai" };
 
 // Asynchronously retrieve data from storage.sync, then cache it.
 const initStorageCache = chrome.storage.sync.get().then((items) => {
