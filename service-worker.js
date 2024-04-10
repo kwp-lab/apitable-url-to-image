@@ -24,7 +24,7 @@ const initStorageCache = chrome.storage.sync.get().then((items) => {
     Object.assign(storageCache, items);
 });
 
-// fetch image data from url, convert to blob data, and upload to APITable as attachment with API
+// fetch image data from url, convert to blob data, and upload to AITable as attachment with API
 async function convertUrltoImage(eventData) {
     const params = {
         datasheetId: eventData.popupData.datasheetId,
@@ -48,11 +48,11 @@ async function convertUrltoImage(eventData) {
             // get the urls from the url field
             const imageUrls = filterValidUrls(record, params.urlFieldId)
 
-            console.debug(`Processing ${imageUrls.length} urls`, imageUrls);
-
             if (!Array.isArray(imageUrls) || imageUrls.length == 0) {
                 continue;
             }
+
+            console.debug(`Processing ${imageUrls.length} urls`, imageUrls);
 
             const uploader = new ImageUploader(params.datasheetId, params.viewId, storageCache.apiHost, storageCache.apiToken);
 
@@ -124,7 +124,7 @@ chrome.runtime.onMessage.addListener(function (
         eventMsg
     );
 
-    const eventData = Object.assign({}, eventMsg.data);
+    const eventData = { ...eventMsg.data};
 
     initStorageCache.then(() => {
         if (eventMsg.event == "convertToImage") {

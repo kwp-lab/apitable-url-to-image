@@ -23,11 +23,11 @@ function startsWithHttpOrHttps(urlStr) {
 }
 
 /**
- * Checks if a URL string matches the APITable attachment format
+ * Checks if a URL string matches the AITable attachment format
  * @param {String} urlStr - The URL string to be validated
  * @returns {Boolean} - The result of the regular expression test
  */
-function isAPITableAttachmentFormat(urlStr) {
+function isAITableAttachmentFormat(urlStr) {
   // Regular expression pattern to match URLs in the format "filename (http|https://url)"
   let pattern = /.+\s\((http|https):\/\/.+?\.(jpg|gif|jpeg|png)\)$/i;
   return pattern.test(urlStr);
@@ -57,7 +57,7 @@ function filterValidUrls(record, urlFieldId) {
   let fieldValue = record.fields[urlFieldId];
 
   // If the field value is an empty string, return null
-  if (fieldValue === "") {
+  if (typeof fieldValue !== "string" || fieldValue.trim() === "") {
     return null;
   }
 
@@ -76,10 +76,10 @@ function filterValidUrls(record, urlFieldId) {
       if (startsWithHttpOrHttps(valStr)) {
         result.push(getFileUrlObject(valStr));
       }
-      // If the value is in the format of an APITable attachment field converted to a string, add it to the result array
-      else if (isAPITableAttachmentFormat(valStr)) {
+      // If the value is in the format of an AITable attachment field converted to a string, add it to the result array
+      else if (isAITableAttachmentFormat(valStr)) {
         let tmp = valStr.split(" (");
-        console.log("analyzing APITable Format URL", tmp);
+        console.log("analyzing AITable Format URL", tmp);
         let fileObj = {
           fileName: tmp[0].trim(),
           url: tmp[1].substr(0, tmp[1].length - 1),
@@ -88,13 +88,13 @@ function filterValidUrls(record, urlFieldId) {
       }
     });
   }
-  // If there's only one url, check if it's a valid image url or an APITable attachment field converted to a string
+  // If there's only one url, check if it's a valid image url or an AITable attachment field converted to a string
   else {
     if (startsWithHttpOrHttps(fieldValue)) {
       result.push(getFileUrlObject(fieldValue));
-    } else if (isAPITableAttachmentFormat(fieldValue)) {
+    } else if (isAITableAttachmentFormat(fieldValue)) {
       let tmp = fieldValue.split(" (");
-      console.log("analyzing APITable Format URL", tmp);
+      console.log("analyzing AITable Format URL", tmp);
       let fileObj = {
         fileName: tmp[0].trim(),
         url: tmp[1].substr(0, tmp[1].length - 1),

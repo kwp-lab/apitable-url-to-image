@@ -1,5 +1,5 @@
 // Where we will expose all the data we retrieve from storage.sync.
-const storageCache = { apiToken: '', apiHost: 'https://apitable.com' };
+const storageCache = { apiToken: '', apiHost: 'https://aitable.ai' };
 // Asynchronously retrieve data from storage.sync, then cache it.
 const initStorageCache = chrome.storage.sync.get().then((items) => {
     // Copy the data retrieved from storage into storageCache.
@@ -27,7 +27,7 @@ async function getDatasheetParamsFromURL() {
         popupData.datasheetId = match[1];
         popupData.viewId = match[2];
     } else {
-        throw new Error("Please open a datasheet view in APITable Workbench.");
+        throw new Error("Please open a datasheet view in AITable Workbench.");
     }
 }
 
@@ -95,7 +95,7 @@ async function convert() {
     console.log(response);
 
     if (response.success !== undefined) {
-        if (response.success == true) {
+        if (response.success === true) {
             showMsg("Conversion completed successfully.", "alert-success");
         } else {
             showMsg("Error: "+ JSON.stringify(response.message), "alert-danger");
@@ -113,7 +113,7 @@ async function convert() {
 function showMsg(msg, type) {
     const msgEl = document.querySelector('#alertBox');
     msgEl.textContent = msg;
-    msgEl.classList.add(type ? type : "alert-primary");
+    msgEl.classList.add(type || "alert-primary");
     msgEl.style.display = "block";
 }
 

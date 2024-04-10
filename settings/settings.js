@@ -11,7 +11,7 @@ const saveOptions = () => {
     }
   
     chrome.storage.sync.set(
-      { apiToken: apiToken, apiHost: apiHost ? apiHost : 'https://apitable.com' },
+      { apiToken: apiToken, apiHost: apiHost || 'https://aitable.ai' },
       () => {
         // Update status to let user know options were saved.
         const status = document.getElementById('statusMsg');
@@ -29,7 +29,7 @@ const saveOptions = () => {
   // stored in chrome.storage.
   const restoreOptions = () => {
     chrome.storage.sync.get(
-      { apiToken: '', apiHost: 'https://apitable.com' },
+      { apiToken: '', apiHost: 'https://aitable.ai' },
       (items) => {
         document.getElementById('inputTokenField').value = items.apiToken;
         document.getElementById('inputHostField').value = items.apiHost;
